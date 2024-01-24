@@ -184,7 +184,7 @@ while(a<starWarsCharacters.length){
   crewMass += starWarsCharacters[a].mass;
   a++;
 }
-console.log("Massa totale :",crewMass);
+console.log("Massa totale equipaggio :",crewMass);
 /* ESERCIZIO 7
   Crea uno if/else statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'ipotetica astronave contenente 
   i personaggi dell'array "starWarsCharacters".
@@ -217,15 +217,29 @@ if(crewMass<500){
 */
  
 for (let i=0; i<starWarsCharacters.length;i++) {
+  if(starWarsCharacters[i].gender==='n/a') {
+    starWarsCharacters[i].gender = 'robot';
+  }
 
-  
+
 }
    
-
+console.log(starWarsCharacters);
 /* --EXTRA-- ESERCIZIO 9
-  Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
+  Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames"
+  le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
 */
+
+for (let i=0; i < starWarsCharacters.length; i++) {
+  if (starWarsCharacters[i].name===femaleCharacters[i].name){
+
+    
+  }
+  
+}
+
+
 
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
