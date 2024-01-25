@@ -178,11 +178,11 @@ console.log(eyeColor);
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
 */
-let a=0;
+let index=0;
 let crewMass=0;
-while(a<starWarsCharacters.length){
-  crewMass += starWarsCharacters[a].mass;
-  a++;
+while(index<starWarsCharacters.length){
+  crewMass += starWarsCharacters[index].mass;
+  index++;
 }
 console.log("Massa totale equipaggio :",crewMass);
 /* ESERCIZIO 7
@@ -225,22 +225,48 @@ for (let i=0; i<starWarsCharacters.length;i++) {
 }
    
 console.log(starWarsCharacters);
+
+// for (let i=0; i<starWarsCharacters.length;i++) {
+//   const starWarsCharactersObj= starWarsCharacters[i];
+//   const gender= starWarsCharacters[i].gender 
+
+//   if(gender==='n/a') {
+//     gender = 'robot';
+//   }
+
+
+// }
+   
+// console.log(starWarsCharactersObj);
+
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames"
   le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
 */
+console.log(" pre eliminazione",charactersNames);
+for (let i=0; i < charactersNames.length; i++) {
+   const characterStr= charactersNames[i];
 
-for (let i=0; i < starWarsCharacters.length; i++) {
-  if (starWarsCharacters[i].name===femaleCharacters[i].name){
-
+   // questo loop interno avviene 2 volte per ogni ciclo eaterno 
+  for (let j = 0; j < femaleCharacters.length; j++) {
+    const femChrObj = femaleCharacters[j];
+    //console.log(femChrObj,"i è uguale a:,i")
+    if (femChrObj.name===characterStr){
+      console.log(femChrObj.name, " è presente nell'array di stringhe",i);
+      charactersNames.splice(i,1)
+    }
     
   }
   
 }
 
-
+console.log("post eliminazione ",charactersNames);
 
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+const randomIndex=Math.floor(Math.random() *starWarsCharacters.length); // numero casuale ogni ciclo
+console.log(randomIndex);
+const randomlySelectedCharacter= starWarsCharacters[randomIndex];
+console.log("il personaggio "+ randomlySelectedCharacter.name + " è alto "+ randomlySelectedCharacter.height);
